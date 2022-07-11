@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - rhel-edge-mangement-role
