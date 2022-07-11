@@ -12,3 +12,4 @@ Use Ansible to manage RHEL instances using Fleet Manager or Image Builder.
 * Create ansible configuration file for deployments.
 * Show offline online Scenario
 * pipe dream: fail back to cloud instance.  
+* Tekton pipelines for build packs
