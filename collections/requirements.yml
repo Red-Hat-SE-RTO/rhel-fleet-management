@@ -1,5 +1,5 @@
 ---
 collections:
-- ansible.posix
-- containers.podman
-- community.general
+  - ansible.posix
+  - containers.podman
+  - community.general
