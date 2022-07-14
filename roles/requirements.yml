@@ -4,3 +4,6 @@
 
 - src: https://github.com/tosin2013/rhel-edge-management-role.git
   version: main
+  
+- src: https://github.com/Red-Hat-SE-RTO/rhel-egde-on-vmware.git
+  version: main
