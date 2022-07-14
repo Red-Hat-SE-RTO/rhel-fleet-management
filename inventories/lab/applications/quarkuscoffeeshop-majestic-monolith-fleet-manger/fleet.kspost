@@ -6,7 +6,8 @@ clearpart --all --initlabel
 autopart --type=plain --fstype=xfs --nohome
 reboot
 text
-network --bootproto=dhcp
+network --bootproto=dhcp --device=ens192  --activate
+network  --hostname=quarkus-test
 
 # create default user with sudo privileges for testing
 user --name=core --groups=wheel --password=edge
