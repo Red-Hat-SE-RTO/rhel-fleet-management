@@ -2,7 +2,7 @@
 echo POST-CUSTOM-STAGE-SETUP
 
 [[ -e /root/fleet_env.bash ]] && source /root/fleet_env.bash
-hostnamectl set-hostname coffeeshop-$(echo $RANDOM | base64 | head -c 20; echo)
+hostnamectl set-hostname coffeeshop-hex
 mkdir -p /home/admin/data
 curl -L https://raw.githubusercontent.com/jeremyrdavis/quarkuscoffeeshop-majestic-monolith/main/init-postgresql.sql  --output /tmp/init-postgresql.sql
 cp /tmp/init-postgresql.sql /home/admin/data/init-postgresql.sql
