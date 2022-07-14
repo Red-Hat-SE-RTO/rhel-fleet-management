@@ -9,9 +9,6 @@ text
 network --bootproto=dhcp --device=ens192  --activate
 network  --hostname=quarkus-test
 
-# create default user with sudo privileges for testing
-user --name=core --groups=wheel --password=edge
-
 # Gen the ostreesetup line in the pre section
 %include /tmp/ostreesetup
 
