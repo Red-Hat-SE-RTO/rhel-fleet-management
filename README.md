@@ -5,7 +5,7 @@ Use Ansible to manage RHEL instances using Fleet Manager or Image Builder.
 ## Tasks:
 * Hyper-V Role 
   * Load VM with iso and boot quarkuscofffeeshop 
-* Build role for console.redhat.com
+* Build role for console.redhat.com -> https://github.com/tosin2013/rhel-edge-management-role.git
 * perform updates of image from console.redhat.com
 * Templatize the kickstart file for the different repos
 * Create ansible configuration for tower deployments.
