@@ -6,7 +6,8 @@ clearpart --all --initlabel
 autopart --type=plain --fstype=xfs --nohome
 reboot
 text
-network --bootproto=dhcp --device=ens192  --activate
+# Testing Network
+network  --bootproto=static --device=eno1 --gateway=192.168.1.1 --ip=192.168.1.150 --nameserver=192.168.1.239 --netmask=255.255.255.0 --onboot=on --ipv6=auto 
 network  --hostname=quarkus-test
 
 # Gen the ostreesetup line in the pre section
