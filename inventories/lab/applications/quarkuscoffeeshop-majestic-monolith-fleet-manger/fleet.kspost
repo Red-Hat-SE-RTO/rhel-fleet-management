@@ -7,8 +7,10 @@ autopart --type=plain --fstype=xfs --nohome
 reboot
 text
 # Testing Network
-network  --bootproto=static --device=ens192 --gateway=192.168.1.1 --ip=192.168.1.150 --nameserver=192.168.1.239 --netmask=255.255.255.0 --onboot=on --ipv6=auto 
-network  --hostname=quarkus-test
+#network  --bootproto=static --device=ens192 --gateway=192.168.1.1 --ip=192.168.1.150 --nameserver=192.168.1.239 --netmask=255.255.255.0 --onboot=on --ipv6=auto 
+
+network --bootproto=dhcp --device=link --activate --onboot=on
+network  --hostname=CHANGE_HOSTNAME
 
 # Gen the ostreesetup line in the pre section
 %include /tmp/ostreesetup
