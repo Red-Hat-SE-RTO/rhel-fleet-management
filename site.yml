@@ -2,3 +2,4 @@
 - hosts: localhost
   roles:
     - rhel-edge-management-role
+    - rhel-edge-on-rhev
