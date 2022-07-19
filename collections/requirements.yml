@@ -4,3 +4,6 @@ collections:
   - containers.podman
   - community.general
   - ovirt.ovirt
+  - name: https://github.com/kenmoini/ansible-collection-hyperv.git
+    type: git
+    version: main
