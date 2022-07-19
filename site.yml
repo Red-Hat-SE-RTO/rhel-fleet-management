@@ -3,3 +3,5 @@
   roles:
     - rhel-edge-management-role
     - rhel-edge-on-rhev
+    - rhel-edge-on-hyperv
+    - rhel-egde-on-vmware
