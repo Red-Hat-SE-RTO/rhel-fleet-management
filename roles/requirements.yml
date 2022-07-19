@@ -10,3 +10,6 @@
 
 - src: https://github.com/Red-Hat-SE-RTO/rhel-edge-on-rhev.git
   version: main
+
+- src: https://github.com/Red-Hat-SE-RTO/rhel-edge-on-hyperv.git
+  version: main
