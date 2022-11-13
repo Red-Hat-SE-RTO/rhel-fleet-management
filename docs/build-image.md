@@ -53,8 +53,8 @@ compiled_uri_headers: {}
 
 **RHEL Ussername **
 * Required: true  
-Question:   
-Answer variable name: `rh_authentication_basic_username` . 
+* Question:`RH Username:` . 
+* Answer variable name: `rh_authentication_basic_username` . 
 ![20221113120730](https://i.imgur.com/Aze4OCN.png)
 
 **RHEL Password**
