@@ -47,3 +47,27 @@ os_variant: "rhel8.6"
 ## Dont need to change 
 compiled_uri_headers: {}
 ```
+
+
+### Survey Variables
+
+**RHEL Ussername **
+* Required: true
+Question: 
+Answer variable name: `rh_authentication_basic_username`
+![20221113120730](https://i.imgur.com/Aze4OCN.png)
+
+**RHEL Password**
+* Required: true
+Question: `RH Password:`
+Answer variable name: `rh_authentication_basic_password`
+![20221113120935](https://i.imgur.com/mjgWPBp.png)
+
+**API Token:**
+> [Red Hat API Tokens](https://access.redhat.com/management/api)
+* Required: true
+Question: `RH Password:`
+Answer variable name: `rh_offline_authentication_api_bearer_token`
+![20221113121155](https://i.imgur.com/CnF4sqi.png)
+
+![20221113121237](https://i.imgur.com/042j1mU.png)
