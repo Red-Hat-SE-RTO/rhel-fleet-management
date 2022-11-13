@@ -1,0 +1,49 @@
+# Image Build Settings for Fleet Manager
+
+**Job Variables**
+```
+---
+#########################################################
+## Direcoties
+### For Tower 
+## for workstation: iso_download_directory: "/opt/generated_iso"
+iso_download_directory: "/tmp/generated_iso"
+
+### For Tower 
+## for workstation: workspace: "/opt/lib/aws/projects/workspace"
+workspace: "/tmp"
+
+#########################################################
+## Required Files
+ssh_pub_key: "CHANGEME"
+
+#########################################################
+## required variables
+create_device_name_group: true
+device_group_name: "my-device-name-group"
+create_image: true
+
+#########################################################
+## image atrributes
+image_name: "test-image"
+username: "admin"
+distribution: "rhel-86"
+description: "sample description"
+packages: "curl net-tools podman tar bind-utils git"
+arch: "x86_64"
+kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
+
+#########################################################
+## automated management variables
+rhc_org_id: "1111111"
+rhc_activation_key: "CHANGEME"
+
+#########################################################
+## optional variables
+## osinfo-query os
+os_variant: "rhel8.6"
+
+#########################################################
+## Dont need to change 
+compiled_uri_headers: {}
+```
