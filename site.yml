@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: hypervisor
   roles:
     - rhel-edge-management-role
     - rhel-edge-on-rhev
