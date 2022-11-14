@@ -35,6 +35,7 @@ kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-man
 
 #########################################################
 ## automated management variables
+## https://access.redhat.com/management/activation_keys
 rhc_org_id: "1111111"
 rhc_activation_key: "CHANGEME"
 
