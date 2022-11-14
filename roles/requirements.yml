@@ -13,3 +13,6 @@
 
 - src: https://github.com/Red-Hat-SE-RTO/rhel-edge-on-hyperv.git
   version: main
+
+- src: https://github.com/Red-Hat-SE-RTO/rhel-edge-kvm-role.git
+  version: main

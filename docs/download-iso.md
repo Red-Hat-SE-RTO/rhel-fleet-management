@@ -61,16 +61,19 @@ compiled_uri_headers: {}
 * Required: true  
 * Question:`RH Username:` . 
 * Answer variable name: `rh_authentication_basic_username` . 
-
+![20221114093344](https://i.imgur.com/HyNlYqU.png)
 
 **RHEL Password**
 * Required: true   
 * Question: `RH Password:` . 
 * Answer variable name: `rh_authentication_basic_password` . 
-
+![20221114093412](https://i.imgur.com/FMQaWkJ.png)
 
 **API Token:**
 > [Red Hat API Tokens](https://access.redhat.com/management/api) . 
 * Required: true  
 * Question: `RH Password:` . 
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
+![20221114093458](https://i.imgur.com/ayCXAWR.png)
+
+![20221114093201](https://i.imgur.com/pWqND5X.png)
