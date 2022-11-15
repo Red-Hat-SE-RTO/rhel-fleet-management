@@ -94,21 +94,22 @@ virtual_machines:
 * Required: true  
 * Question:`RH Username:` . 
 * Answer variable name: `rh_authentication_basic_username` . 
-![20221114202745](https://i.imgur.com/mUrVZf7.png)
+![20221114204454](https://i.imgur.com/z0UsSCe.png)
 
 **RHEL Password**
 * Required: true   
 * Question: `RH Password:` . 
 * Answer variable name: `rh_authentication_basic_password` . 
-![20221114202820](https://i.imgur.com/09oVuDW.png)
+![20221114204423](https://i.imgur.com/b9rxVMx.png)
 
 **API Token:**
 > [Red Hat API Tokens](https://access.redhat.com/management/api) . 
 * Required: true  
 * Question: `RH Password:` . 
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
-![20221114202856](https://i.imgur.com/56xJJ6k.png)
+![20221114204342](https://i.imgur.com/t6Eg7OJ.png)
+![20221114204230](https://i.imgur.com/nxT5Fd7.png)
 
-![20221114202927](https://i.imgur.com/vVD86C2.png)
+---
 
-![20221114203101](https://i.imgur.com/aTU9BYf.png)
+![20221114204258](https://i.imgur.com/X4wKMNY.png)
