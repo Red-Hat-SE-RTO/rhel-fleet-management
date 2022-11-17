@@ -5,6 +5,7 @@ Instructions for installing AAP for development purposes. Please see offical doc
 https://access.redhat.com/management/api
 
 ### Deploy Jumpbox
+> Red Hat Enterprise Linux 9.0 Update KVM Guest Image
 ```
 sudo ssh-keygen
 
