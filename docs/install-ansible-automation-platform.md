@@ -58,7 +58,7 @@ EOF
 * Get offline token
 > [Red Hat API Tokens](https://access.redhat.com/management/api)
 * Update provided_sha_value if needed
-* [Download Red Hat Ansible Automation Platform](https://access.redhat.com/downloads/content/480/ver=2.2/rhel---9/2.2/x86_64/product-software
+* [Download Red Hat Ansible Automation Platform](https://access.redhat.com/downloads/content/480/ver=2.2/rhel---9/2.2/x86_64/product-software)
 ![](https://i.imgur.com/E8RQ2E3.png)
 
 ```
