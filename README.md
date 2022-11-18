@@ -1,21 +1,10 @@
 # RHEL Fleet Manager
 Use Ansible to manage RHEL instances using Fleet Manager or Image Builder. 
 
+## Documentation
+[Fleet Manager with AAP Documentation](docs/README.md)
 
-## Tasks:
-* Hyper-V Role 
-  * Load VM with iso and boot quarkuscofffeeshop 
-* Build role for console.redhat.com -> https://github.com/tosin2013/rhel-edge-management-role.git
-* perform updates of image from console.redhat.com
-* Templatize the kickstart file for the different repos
-* Create ansible configuration for tower deployments.
-* Show offline online Scenario
-* pipe dream: fail back to cloud instance.  
-* Tekton pipelines for build packs
-* nice to have: tekton pipeline to trigger ansible job 
-* Documentation 
-
-## directory structure 
+## Directory Structure 
 ```
 $ tree .
 .

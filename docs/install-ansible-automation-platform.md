@@ -4,41 +4,48 @@ Instructions for installing AAP for development purposes. Please see offical doc
 
 https://access.redhat.com/management/api
 
-### Deploy Jumpbox
+## Deploy Ansible Automation platform
+
+#### Automatically 
 ```
 sudo ssh-keygen
 
 sudo kcli create vm -p rhel9_ansible ansible-aap --wait
 ```
 
-### Crete Ansible AAP VM
-```
-sudo kcli ssh ansible-aap
-```
-
-### Configure RHEL 9 system
-```        
-curl -OL https://gist.githubusercontent.com/tosin2013/695835751174d725ac196582f3822137/raw/8bc48c73781fc744fbb1999ae7aeac7df3441c43/configure-rhel9.x.sh
-chmod +x configure-rhel9.x.sh
-./configure-rhel9.x.sh
+#### Access Ansible Automation Platform
 
 ```
+sudo kcli ssh ansible-aap cat /cloud-user/aap_info.txt
+```
 
-### Clone AgnosticD repo
+### Manually 
+```
+sudo kcli create vm -p rhel9_ansible_manual ansible-aap --wait
+```
+#### Install base packages
+```
+sudo dnf update -y 
+sudo dnf install git vim unzip wget bind-utils tar ansible-core python3 python3-pip util-linux-user -y 
+sudo dnf install ncurses-devel curl -y
+curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=vim&langs=javascript&langs=go&langs=html&langs=ruby&langs=python' > ~/.vimrc
+```
+
+#### Clone AgnosticD repo
 ```                     
 git clone https://github.com/redhat-cop/agnosticd.git
 cd $HOME/agnosticd/ansible
 git checkout development
 ```
 
-### Create hosts file for inventory
+#### Create hosts file for inventory
 ```
 cat >hosts<<EOF
 localhost   ansible_connection=local
 EOF
 ```
 
-### create playbook to download the AAP tar file
+#### create playbook to download the AAP tar file
 ```
 cat >run_me.yaml<<EOF
 - name: Install Ansible automation controller
@@ -53,7 +60,7 @@ cat >run_me.yaml<<EOF
 EOF
 ```                    
                       
-### create vars file for ansible playbook 
+#### create vars file for ansible playbook 
 * Get offline token
 > [Red Hat API Tokens](https://access.redhat.com/management/api)
 * Update provided_sha_value if needed
@@ -71,16 +78,16 @@ EOF
 
 ```
 
-### Run Ansible Playbook to download AAP
+#### Run Ansible Playbook to download AAP
 ```
 ansible-playbook -i hosts run_me.yaml --extra-vars @dev.yml
 ```
-### Extract aap file
+#### Extract aap file
 ```
 tar -zxvf aap.tar.gz 
 cd ansible-automation-platform-setup-bundle-2.2.1-1.1/
 ```
-### Deploy Single Instance of AAP
+#### Deploy Single Instance of AAP
 ```
 $ export REGISTRY_USERNAME=""
 $ export REGISTRY_PASSWORD=""
@@ -108,12 +115,16 @@ EOF
 $ sudo ./setup.sh
 ```
 
-### Get login information 
+#### Get login information 
 WEBPAGE: https://youripaddress
 USERNAME: `admin`
 ```
  cat inventory  | grep admin_password
 ```
 
-### You should see the Virtual Machine in Cockpit Dashboard
+#### You should see the Virtual Machine in Cockpit Dashboard
 ![](https://i.imgur.com/zR7pAed.png)
+
+
+#### Test Default playbook 
+![20221118131135](https://i.imgur.com/9ZIHLP4.png)
