@@ -1,11 +1,24 @@
-# Image Build Settings for Fleet Manager
+# Quarkus CoffeeShop  demo on the Edge Management console  - WIP
+> Contributions are welcome current work in progress currently building. 
+Deploy the Quarkus CoffeeShop demo on the Edge Management console using Ansible Automation Platform.
 
+## Prerequisites
+* Ansible Automation Platform 
+* Add Credentials to target machine 
+* Build image job 
+* Download ISO job 
+* Deploy to KVM job
+* [Create a custom repository](https://github.com/redhat-et/microshift-demos/tree/main/demos/edge-console-demo#create-a-custom-repository)
 
-**Job Tags**
+## Ensure Target Machine is created 
+> Give privilege access to the target machine to the Ansible Automation Platform user.
+![20221121095704](https://i.imgur.com/d2OLzqK.png)
+![20221121095902](https://i.imgur.com/hFbPiui.png)
+## Build Image Job Parameters
+Add 
+The following Job Tags for image builds:
 * get_build_status
 * build_image
-
-**Job Variables**
 ```
 ---
 #########################################################
@@ -30,11 +43,12 @@ create_image: true
 
 #########################################################
 ## image atrributes
-image_name: "test-image" # Example: "test-image-11-13-2022-b1"
+image_name: "quarkuscoffeeshop-majestic-monolith-11-21-2022-b1" # Example: "test-image-11-13-2022-b1"
 username: "admin"
 distribution: "rhel-86"
 description: "sample description"
-packages: "curl net-tools podman tar bind-utils git"
+build_template: image-build # for microshift deployments use image-mircoshift-build
+mircroshift_deployment: false
 arch: "x86_64"
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
 
@@ -53,27 +67,26 @@ os_variant: "rhel8.6"
 ## Dont need to change 
 compiled_uri_headers: {}
 ```
-
-
 ### Survey Variables
 
 **RHEL Username **
 * Required: true  
 * Question:`RH Username:` . 
+* Type: Text
 * Answer variable name: `rh_authentication_basic_username` . 
-![20221113120730](https://i.imgur.com/Aze4OCN.png)
 
 **RHEL Password**
 * Required: true   
 * Question: `RH Password:` . 
+* Type: Password
 * Answer variable name: `rh_authentication_basic_password` . 
-![20221113120935](https://i.imgur.com/mjgWPBp.png)
+
 
 **API Token:**
 > [Red Hat API Tokens](https://access.redhat.com/management/api) . 
 * Required: true  
 * Question: `RH Token:` . 
+* Type: Password
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
-![20221113121155](https://i.imgur.com/CnF4sqi.png)
 
-![20221113121237](https://i.imgur.com/042j1mU.png)
+![20221121102135](https://i.imgur.com/YOvbg97.png)

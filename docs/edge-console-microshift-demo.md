@@ -1,11 +1,20 @@
-# Image Build Settings for Fleet Manager
+# MicroShift demo on the Edge Management console - WIP
+> Contributions are welcome current work in progress
+Deploy the MicroShift demo on the Edge Management console using Ansible Automation Platform. 
+
+This demo will allow you to experience the integration between MicroShift and the RedHat hosted Edge fleet management. At the time of writing this demo, MicroShift is still in development, and it's impossible to bundle the MicroShift package into image builds yet. To make this possible, we use the public test build created by the MicroShift team for the KubeCon NA 2022 here in copr.
+
+Link: https://github.com/redhat-et/microshift-demos/tree/main/demos/edge-console-demo
+
+## Prerequisites
+* Ansible Automation Platform 
+* Build image job 
+* Download ISO job 
+* Deploy to KVM job
+* [Create a custom repository](https://github.com/redhat-et/microshift-demos/tree/main/demos/edge-console-demo#create-a-custom-repository)
 
 
-**Job Tags**
-* get_build_status
-* build_image
-
-**Job Variables**
+## Build Image Job Parameters
 ```
 ---
 #########################################################
@@ -30,11 +39,12 @@ create_image: true
 
 #########################################################
 ## image atrributes
-image_name: "test-image" # Example: "test-image-11-13-2022-b1"
+image_name: "mircoshift-11-15-2022-b1" # Example: "test-image-11-13-2022-b1"
 username: "admin"
 distribution: "rhel-86"
 description: "sample description"
-packages: "curl net-tools podman tar bind-utils git"
+build_template: image-mircoshift-build # for standard deployments image-build
+mircroshift_deployment: false
 arch: "x86_64"
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
 
@@ -53,27 +63,3 @@ os_variant: "rhel8.6"
 ## Dont need to change 
 compiled_uri_headers: {}
 ```
-
-
-### Survey Variables
-
-**RHEL Username **
-* Required: true  
-* Question:`RH Username:` . 
-* Answer variable name: `rh_authentication_basic_username` . 
-![20221113120730](https://i.imgur.com/Aze4OCN.png)
-
-**RHEL Password**
-* Required: true   
-* Question: `RH Password:` . 
-* Answer variable name: `rh_authentication_basic_password` . 
-![20221113120935](https://i.imgur.com/mjgWPBp.png)
-
-**API Token:**
-> [Red Hat API Tokens](https://access.redhat.com/management/api) . 
-* Required: true  
-* Question: `RH Token:` . 
-* Answer variable name: `rh_offline_authentication_api_bearer_token` . 
-![20221113121155](https://i.imgur.com/CnF4sqi.png)
-
-![20221113121237](https://i.imgur.com/042j1mU.png)

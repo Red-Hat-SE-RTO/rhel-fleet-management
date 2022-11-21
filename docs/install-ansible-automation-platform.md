@@ -8,33 +8,33 @@ https://access.redhat.com/management/api
 
 ### Prerequisites
 **Confirm ssh key is genereated**
-```
+```bash
 sudo ssh-keygen
 ```
 
 #### Automatically 
-```
+```bash
 sudo kcli create vm -p rhel9_ansible ansible-aap --wait
 ....
 ```
 
 #### Access Ansible Automation Platform
 
-```
+```bash
 sudo kcli ssh ansible-aap cat /home/cloud-user/aap_info.txt
 ```
 
 #### If install fails run the following
-```
+```bash
 sudo kcli delete vm ansible-aap
 ```
 
 ### Manually 
-```
+```bash
 sudo kcli create vm -p rhel9_ansible_manual ansible-aap --wait
 ```
 #### Install base packages
-```
+```bash
 sudo dnf update -y 
 sudo dnf install git vim unzip wget bind-utils tar ansible-core python3 python3-pip util-linux-user -y 
 sudo dnf install ncurses-devel curl -y
@@ -42,21 +42,21 @@ curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=vim&langs=javascrip
 ```
 
 #### Clone AgnosticD repo
-```                     
+```bash                    
 git clone https://github.com/redhat-cop/agnosticd.git
 cd $HOME/agnosticd/ansible
 git checkout development
 ```
 
 #### Create hosts file for inventory
-```
+```bash
 cat >hosts<<EOF
 localhost   ansible_connection=local
 EOF
 ```
 
 #### create playbook to download the AAP tar file
-```
+```bash
 cat >run_me.yaml<<EOF
 - name: Install Ansible automation controller
   hosts: localhost
@@ -77,7 +77,7 @@ EOF
 * [Download Red Hat Ansible Automation Platform](https://access.redhat.com/downloads/content/480/ver=2.2/rhel---9/2.2/x86_64/product-software)
 ![](https://i.imgur.com/E8RQ2E3.png)
 
-```
+```bash
 $ vi $HOME/offline_token
 offline_token=$(cat $HOME/offline_token)
 cat >dev.yml<<EOF
@@ -89,16 +89,16 @@ EOF
 ```
 
 #### Run Ansible Playbook to download AAP
-```
+```bash
 ansible-playbook -i hosts run_me.yaml --extra-vars @dev.yml
 ```
 #### Extract aap file
-```
+```bash
 tar -zxvf aap.tar.gz 
 cd ansible-automation-platform-setup-bundle-2.2.1-1.1/
 ```
 #### Deploy Single Instance of AAP
-```
+```bash
 $ export REGISTRY_USERNAME=""
 $ export REGISTRY_PASSWORD=""
 $ VM_IP_ADDRESS=$(hostname -I | awk '{print $1}')
