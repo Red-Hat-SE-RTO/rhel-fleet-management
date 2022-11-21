@@ -15,12 +15,18 @@ sudo ssh-keygen
 #### Automatically 
 ```
 sudo kcli create vm -p rhel9_ansible ansible-aap --wait
+....
 ```
 
 #### Access Ansible Automation Platform
 
 ```
 sudo kcli ssh ansible-aap cat /cloud-user/aap_info.txt
+```
+
+#### If install fails run the following
+```
+sudo kcli delete vm ansible-aap
 ```
 
 ### Manually 
