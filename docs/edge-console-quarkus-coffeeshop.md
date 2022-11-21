@@ -69,7 +69,7 @@ compiled_uri_headers: {}
 ```
 ### Survey Variables
 
-**RHEL Username **
+**RHEL Username**
 * Required: true  
 * Question:`RH Username:` . 
 * Type: Text
