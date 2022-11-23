@@ -153,7 +153,7 @@ template_dir: "{{ iso_download_directory }}"
 libvirt_defaults:
   edge_device:
     cpu: 4
-    memory: 4194304 
+    memory: 8388608 
 
 virtual_machines:
   - name: "{{ libvirt_vm_name }}"
