@@ -169,7 +169,7 @@ virtual_machines:
     disk_iso: "{{ libvirt_vm_name }}"
     connection_type: "network" # "bridge" or "network" bridge is default
     bridgename: "default" 
-    bridge_mac: 52:54:00:fe:75:40
+    bridge_mac: "{{ '52:54:00' | community.general.random_mac }}"
     vlanid: 0 # use 503 in network mode for emulated lab or 0 in hardware bridge mode
     subnet: "192.168.122.1/24"
     secondary_dns: 1.1.1.1
