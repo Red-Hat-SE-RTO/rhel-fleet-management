@@ -261,7 +261,6 @@ podman network create --driver bridge rhel-edge --subnet 172.16.23.0/24
 # applied at the next reboot
 #stage updates as they become available. This is highly recommended
 echo AutomaticUpdatePolicy=stage >> /etc/rpm-ostreed.conf
-cp build-scripts/image-builder-quarkuscoffeeshop-first-boot.sh /usr/local/bin/image-builder-quarkuscoffeeshop-first-boot.sh
 touch /opt/quarkuscoffeeshop-first-boot-configure
 sed -i 's/enforcing/permissive/g' /etc/selinux/config
 cat >/etc/systemd/system/image-builder-quarkuscoffeeshop-first-boot.service<<EOF
@@ -298,7 +297,7 @@ sed -i 's/your_password/CHANGE_PASSWORD/g' app_env
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/postgresql/postgresql.sh 
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/quarkuscoffeeshop-majestic-monolith/quarkuscoffeeshop-majestic-monolith.sh
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/pcp/performancecopilot.sh
-
+cp /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/image-builder-quarkuscoffeeshop-first-boot.sh /usr/local/bin/image-builder-quarkuscoffeeshop-first-boot.sh
 podman generate systemd   --new --files --name postgresql
 mv pod-postgresql.service /etc/systemd/system/pod-postgresql.service
 mv container-postgresql-1.service /etc/systemd/system/container-postgresql-1.service
