@@ -296,8 +296,8 @@ cd /opt/quarkuscoffeeshop-majestic-monolith
 git clone https://github.com/tosin2013/rhel-edge-application-collection.git
 cd rhel-edge-application-collection
 curl -OL https://raw.githubusercontent.com/tosin2013/rhel-edge-application-collection/main/image-builder/app_env
-sed -i 's/your_username/rhel_username/g' app_env
-sed -i 's/your_password/rhel_password/g' app_env
+sed -i 's/your_username/CHANGE_RHEL_USERNAME/g' app_env
+sed -i 's/your_password/CHANGE_RHEL_USERNAME/g' app_env
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/postgresql/postgresql.sh 
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/quarkuscoffeeshop-majestic-monolith/quarkuscoffeeshop-majestic-monolith.sh
 /opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/pcp/performancecopilot.sh
