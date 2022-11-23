@@ -152,8 +152,8 @@ libvirt_iso_dir:  /var/lib/libvirt/images
 template_dir: "{{ iso_download_directory }}"
 libvirt_defaults:
   edge_device:
-    cpu: 2
-    memory: 2097152 
+    cpu: 4
+    memory: 4194304 
 
 virtual_machines:
   - name: "{{ libvirt_vm_name }}"
