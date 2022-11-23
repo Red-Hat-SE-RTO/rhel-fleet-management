@@ -253,7 +253,7 @@ RHC_FIRSTBOOT=${RHC_FIRSTBOOT:-false}
 echo POST-CUSTOM-STAGE-SETUP
 
 [[ -e /root/fleet_env.bash ]] && source /root/fleet_env.bash
-podman network create --driver bridge rhel-edge --subnet 192.168.33.0/24
+podman network create --driver bridge rhel-edge --subnet 172.16.23.0/24
 
 
 
