@@ -8,7 +8,7 @@
 ```
 ---
 #########################################################
-## Direcoties
+## Directories
 ### For Tower 
 ## for workstation: iso_download_directory: "/opt/generated_iso"
 iso_download_directory: "/tmp/generated_iso"

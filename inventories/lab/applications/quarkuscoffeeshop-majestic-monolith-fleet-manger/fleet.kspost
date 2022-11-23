@@ -253,9 +253,11 @@ RHC_FIRSTBOOT=${RHC_FIRSTBOOT:-false}
 echo POST-CUSTOM-STAGE-SETUP
 
 [[ -e /root/fleet_env.bash ]] && source /root/fleet_env.bash
-mkdir -p /home/admin/data
+podman network create --driver bridge rhel-edge --subnet 192.168.33.0/24
+
+mkdir -p /opt/data
 curl -L https://raw.githubusercontent.com/jeremyrdavis/quarkuscoffeeshop-majestic-monolith/main/init-postgresql.sql  --output /tmp/init-postgresql.sql
-cp /tmp/init-postgresql.sql /home/admin/data/init-postgresql.sql
+cp /tmp/init-postgresql.sql /opt/data/init-postgresql.sql
 
 # Set the update policy to automatically download and stage updates to be
 # applied at the next reboot
@@ -265,32 +267,39 @@ cd /home/admin
 git clone https://github.com/tosin2013/rhel-edge-application-collection.git
 cd rhel-edge-application-collection
 cp build-scripts/image-builder-quarkuscoffeeshop-first-boot.sh /usr/local/bin/image-builder-quarkuscoffeeshop-first-boot.sh
-touch /home/admin/quarkuscoffeeshop-first-boot-configure
+touch /opt/quarkuscoffeeshop-first-boot-configure
 sed -i 's/enforcing/permissive/g' /etc/selinux/config
 cat >/etc/systemd/system/image-builder-quarkuscoffeeshop-first-boot.service<<EOF
 [Unit]
 After=container-quarkuscoffeeshop-majestic-monolith-1.service
 Wants=network-online.target
 After=network-online.target
-ConditionPathExists=!/home/admin/quarkuscoffeeshop-first-boot-complete
+ConditionPathExists=!/opt/quarkuscoffeeshop-first-boot-complete
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/image-builder-quarkuscoffeeshop-first-boot.sh
-ExecStartPost=/usr/bin/touch /home/admin/quarkuscoffeeshop-first-boot-complete
+ExecStartPost=/usr/bin/touch /opt/quarkuscoffeeshop-first-boot-complete
 RemainAfterExit=yes
 
 [Install]
 WantedBy=default.target
 EOF
 sudo chmod 644 /etc/systemd/system/image-builder-quarkuscoffeeshop-first-boot.service
+cat << EOF > /etc/greenboot/check/required.d/check-quarkuscoffeeshop-majestic-monolith.sh
+#!/bin/bash
+mkdir -p  /opt/quarkuscoffeeshop-majestic-monolith
+cd /opt/quarkuscoffeeshop-majestic-monolith
+git clone https://github.com/tosin2013/rhel-edge-application-collection.git
+
 curl -OL https://raw.githubusercontent.com/tosin2013/rhel-edge-application-collection/main/image-builder/app_env
 sed -i 's/your_username/rhel_username/g' app_env
 sed -i 's/your_password/rhel_password/g' app_env
-podman network create --driver bridge rhel-edge --subnet 192.168.33.0/24
-./build-scripts/applications/postgresql/postgresql.sh 
-./build-scripts/applications/quarkuscoffeeshop-majestic-monolith/quarkuscoffeeshop-majestic-monolith.sh
-./build-scripts/applications/pcp/performancecopilot.sh
+
+
+/opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/postgresql/postgresql.sh 
+/opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/quarkuscoffeeshop-majestic-monolith/quarkuscoffeeshop-majestic-monolith.sh
+/opt/quarkuscoffeeshop-majestic-monolith/rhel-edge-application-collection/build-scripts/applications/pcp/performancecopilot.sh
 podman generate systemd   --new --files --name postgresql
 mv pod-postgresql.service /etc/systemd/system/pod-postgresql.service
 mv container-postgresql-1.service /etc/systemd/system/container-postgresql-1.service
@@ -318,4 +327,5 @@ systemctl enable pmproxy
 systemctl start pmproxy
 firewall-cmd --add-service=pmproxy --permanent
 firewall-cmd --reload
+EOF
 %end
