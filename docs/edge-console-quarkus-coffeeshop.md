@@ -1,14 +1,15 @@
 # Quarkus CoffeeShop  demo on the Edge Management console
-> Contributions are welcome current work in progress currently building. 
+> Contributions are welcome.
 Deploy the Quarkus CoffeeShop demo on the Edge Management console using Ansible Automation Platform.
 
+![20221125111926](https://i.imgur.com/vmEIc7S.jpg)
 ## Prerequisites
 * Ansible Automation Platform 
 * Add Credentials to target machine 
 * Build image job 
 * Download ISO job 
 * Deploy to KVM job
-* [Create a custom repository](https://github.com/redhat-et/microshift-demos/tree/main/demos/edge-console-demo#create-a-custom-repository)
+
 
 ## Ensure Target Machine is created 
 > Give privilege access to the target machine to the Ansible Automation Platform user.
