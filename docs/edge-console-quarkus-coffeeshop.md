@@ -3,6 +3,11 @@
 Deploy the Quarkus CoffeeShop demo on the Edge Management console using Ansible Automation Platform.
 
 ![20221125111926](https://i.imgur.com/vmEIc7S.jpg)
+---
+![20221125124747](https://i.imgur.com/ilGr1YE.png)
+---
+![20221125124818](https://i.imgur.com/uOCOzmV.png)
+
 ## Prerequisites
 * Ansible Automation Platform 
 * Add Credentials to target machine 
