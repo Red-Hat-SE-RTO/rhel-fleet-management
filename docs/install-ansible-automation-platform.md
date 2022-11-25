@@ -33,6 +33,12 @@ sudo kcli delete vm ansible-aap
 ```bash
 sudo kcli create vm -p rhel9_ansible_manual ansible-aap --wait
 ```
+
+
+```bash
+sudo kcli ssh ansible-aap
+```
+
 #### Install base packages
 ```bash
 sudo dnf update -y 
