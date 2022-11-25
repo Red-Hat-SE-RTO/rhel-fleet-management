@@ -1,4 +1,4 @@
-# Quarkus CoffeeShop  demo on the Edge Management console  - WIP
+# Quarkus CoffeeShop  demo on the Edge Management console
 > Contributions are welcome current work in progress currently building. 
 Deploy the Quarkus CoffeeShop demo on the Edge Management console using Ansible Automation Platform.
 

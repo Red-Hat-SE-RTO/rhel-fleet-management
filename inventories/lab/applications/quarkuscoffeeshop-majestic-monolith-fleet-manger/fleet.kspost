@@ -261,25 +261,7 @@ podman network create --driver bridge rhel-edge --subnet 172.16.23.0/24
 # applied at the next reboot
 #stage updates as they become available. This is highly recommended
 echo AutomaticUpdatePolicy=stage >> /etc/rpm-ostreed.conf
-touch /opt/quarkuscoffeeshop-first-boot-configure
-sed -i 's/enforcing/permissive/g' /etc/selinux/config
-cat >/etc/systemd/system/image-builder-quarkuscoffeeshop-first-boot.service<<EOF
-[Unit]
-After=container-quarkuscoffeeshop-majestic-monolith-1.service
-Wants=network-online.target
-After=network-online.target
-ConditionPathExists=!/opt/quarkuscoffeeshop-first-boot-complete
 
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/image-builder-quarkuscoffeeshop-first-boot.sh
-ExecStartPost=/usr/bin/touch /opt/quarkuscoffeeshop-first-boot-complete
-RemainAfterExit=yes
-
-[Install]
-WantedBy=default.target
-EOF
-sudo chmod 644 /etc/systemd/system/image-builder-quarkuscoffeeshop-first-boot.service
 cat << EOF > /etc/greenboot/check/required.d/check-quarkuscoffeeshop-majestic-monolith.sh
 #!/bin/bash
 
@@ -326,4 +308,10 @@ systemctl start pmproxy
 firewall-cmd --add-service=pmproxy --permanent
 firewall-cmd --reload
 EOF
+chmod +x /etc/greenboot/check/required.d/check-quarkuscoffeeshop-majestic-monolith.sh
+
+
+curl -L https://raw.githubusercontent.com/tosin2013/rhel-edge-application-collection/main/build-scripts/image-builder-quarkuscoffeeshop-greenboot.sh  --output /tmp/image-builder-quarkuscoffeeshop-greenboot.sh
+mv image-builder-quarkuscoffeeshop-greenboot.sh /etc/greenboot/green.d/image-builder-quarkuscoffeeshop-greenboot.sh
+chmod +x /etc/greenboot/green.d/image-builder-quarkuscoffeeshop-greenboot.sh
 %end
