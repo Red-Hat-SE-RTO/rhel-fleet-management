@@ -24,3 +24,7 @@ Link: https://console.redhat.com/edge/manage-images
 ![20221114202927](https://i.imgur.com/vVD86C2.png)
 
 ![20221114203101](https://i.imgur.com/aTU9BYf.png)
+
+# Demo Links: 
+* Quarkus Coffeeshop - podman via RHEL Edge Example:
+  * [Quarkus CoffeeShop  demo on the Edge Management console](edge-console-quarkus-coffeeshop.md)
