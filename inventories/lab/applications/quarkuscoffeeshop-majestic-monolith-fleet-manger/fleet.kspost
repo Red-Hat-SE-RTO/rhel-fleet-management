@@ -314,6 +314,6 @@ chmod +x /etc/greenboot/check/required.d/check-quarkuscoffeeshop-majestic-monoli
 
 
 curl -L https://raw.githubusercontent.com/tosin2013/rhel-edge-application-collection/main/build-scripts/image-builder-quarkuscoffeeshop-greenboot.sh  --output /tmp/image-builder-quarkuscoffeeshop-greenboot.sh
-mv image-builder-quarkuscoffeeshop-greenboot.sh /etc/greenboot/green.d/image-builder-quarkuscoffeeshop-greenboot.sh
+mv /tmp/image-builder-quarkuscoffeeshop-greenboot.sh /etc/greenboot/green.d/image-builder-quarkuscoffeeshop-greenboot.sh
 chmod +x /etc/greenboot/green.d/image-builder-quarkuscoffeeshop-greenboot.sh
 %end
