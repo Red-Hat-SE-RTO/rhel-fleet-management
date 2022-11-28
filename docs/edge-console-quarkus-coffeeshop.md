@@ -242,7 +242,7 @@ description: "sample description"
 build_template: image-build # for microshift deployments use image-mircoshift-build
 mircroshift_deployment: false
 arch: "x86_64"
-kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
+kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 
 #########################################################
 ## automated management variables
