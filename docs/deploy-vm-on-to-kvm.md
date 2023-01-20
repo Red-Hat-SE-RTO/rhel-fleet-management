@@ -3,6 +3,7 @@
 
 **Job Tags**
 * get_build_status
+* configure_auto_registration
 * download_latest_iso
 * create_kvm_vm
 
