@@ -6,6 +6,7 @@ collections:
   - ovirt.ovirt
   - community.vmware
   - community.libvirt
+  - ansible.windows
   - name: https://github.com/kenmoini/ansible-collection-hyperv.git
     type: git
     version: main
