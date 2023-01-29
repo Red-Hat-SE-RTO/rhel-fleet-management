@@ -71,5 +71,5 @@ compiled_uri_headers: {}
 **API Token:**
 > [Red Hat API Tokens](https://access.redhat.com/management/api) . 
 * Required: true  
-* Question: `RH Password:` . 
+* Question: `RH PI Token:` . 
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
