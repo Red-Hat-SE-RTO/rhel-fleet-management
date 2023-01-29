@@ -56,7 +56,7 @@ compiled_uri_headers: {}
 
 ### Survey Variables
 
-**RHEL Username **
+**RHEL Username**
 * Required: true  
 * Question:`RH Username:` . 
 * Answer variable name: `rh_authentication_basic_username` . 
