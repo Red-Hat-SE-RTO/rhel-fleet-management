@@ -37,7 +37,8 @@ description: "sample description"
 packages: "curl net-tools podman tar bind-utils git"
 build_template: image-build # for standard deployments image-build for microshift use image-mircoshift-build
 arch: "x86_64"
-kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
+mircroshift_deployment: false
+kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 
 #########################################################
 ## automated management variables
