@@ -35,7 +35,7 @@ distribution: "rhel-86"
 description: "sample description"
 packages: "curl net-tools podman tar bind-utils git"
 arch: "x86_64"
-mircroshift_deployment: false
+enable_kickstart: false 
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 
 #########################################################

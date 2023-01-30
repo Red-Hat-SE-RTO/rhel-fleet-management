@@ -53,7 +53,7 @@ username: "admin"
 distribution: "rhel-86"
 description: "sample description"
 build_template: image-build # for microshift deployments use image-mircoshift-build
-mircroshift_deployment: false
+enable_kickstart: false 
 arch: "x86_64"
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet_kspost.txt"
 
@@ -132,7 +132,7 @@ username: "admin"
 distribution: "rhel-86"
 description: "sample description"
 build_template: image-build # for microshift deployments use image-mircoshift-build
-mircroshift_deployment: false
+enable_kickstart: false 
 arch: "x86_64"
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 
@@ -240,7 +240,7 @@ username: "admin"
 distribution: "rhel-86"
 description: "sample description"
 build_template: image-build # for microshift deployments use image-mircoshift-build
-mircroshift_deployment: false
+enable_kickstart: true 
 arch: "x86_64"
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 
