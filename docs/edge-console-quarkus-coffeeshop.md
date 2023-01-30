@@ -313,3 +313,8 @@ virtual_machines:
 * Type: Password
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
 
+**ENTER VM NAME:**
+* Required: true  
+* Question: `ENTER VM NAME:` . 
+* Type: Text
+* Answer variable name: `libvirt_vm_name` . 
