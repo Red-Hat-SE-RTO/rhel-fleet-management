@@ -2,7 +2,7 @@
 - src: https://github.com/tosin2013/quarkuscoffeeshop-majestic-monolith-ansible.git
   version: "2021"
 
-- src: https://github.com/tosin2013/rhel-edge-management-role.git
+- src: https://github.com/mkbredem/rhel-edge-management-role.git
   version: main
   
 - src: https://github.com/Red-Hat-SE-RTO/rhel-egde-on-vmware.git
