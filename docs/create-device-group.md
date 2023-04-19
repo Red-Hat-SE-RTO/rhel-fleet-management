@@ -72,5 +72,13 @@ compiled_uri_headers: {}
 **API Token:**
 > [Red Hat API Tokens](https://access.redhat.com/management/api) . 
 * Required: true  
-* Question: `RH PI Token:` . 
+* Question: `RH Offline API Token:` . 
 * Answer variable name: `rh_offline_authentication_api_bearer_token` . 
+
+
+**Device Group Name:**
+* Required: true  
+* Question: `Enter Device Group Name:` . 
+* Answer variable name: `device_group_name` . 
+
+![image](https://user-images.githubusercontent.com/1975599/233221646-a5ab0ed1-d9e4-43c7-b79e-0e02a1fdfca9.png)
