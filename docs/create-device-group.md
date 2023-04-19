@@ -82,3 +82,4 @@ compiled_uri_headers: {}
 * Answer variable name: `device_group_name` . 
 
 ![image](https://user-images.githubusercontent.com/1975599/233221646-a5ab0ed1-d9e4-43c7-b79e-0e02a1fdfca9.png)
+![image](https://user-images.githubusercontent.com/1975599/233221795-87286d29-d4f9-412c-8e08-7caf8b507b73.png)
