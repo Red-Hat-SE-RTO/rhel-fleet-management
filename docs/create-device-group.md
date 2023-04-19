@@ -31,7 +31,7 @@ create_image: true
 ## image atrributes
 image_name: "test-image" # Example: "test-image-11-13-2022-b1"
 username: "admin"
-distribution: "rhel-86"
+distribution: "rhel-87"
 description: "sample description"
 packages: "curl net-tools podman tar bind-utils git"
 arch: "x86_64"
@@ -47,7 +47,7 @@ rhc_activation_key: "CHANGEME"
 #########################################################
 ## optional variables
 ## osinfo-query os
-os_variant: "rhel8.6"
+os_variant: "rhel8.7"
 
 #########################################################
 ## Dont need to change 
