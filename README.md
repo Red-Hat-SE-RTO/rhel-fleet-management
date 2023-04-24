@@ -4,6 +4,8 @@ Use Ansible to manage RHEL instances using Fleet Manager or Image Builder.
 ## Documentation
 [Fleet Manager with AAP Documentation](docs/README.md)
 
+[![ansible-lint](https://github.com/Red-Hat-SE-RTO/rhel-fleet-management/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/Red-Hat-SE-RTO/rhel-fleet-management/actions/workflows/ansible-lint.yml)
+
 ## Directory Structure 
 ```
 $ tree .
