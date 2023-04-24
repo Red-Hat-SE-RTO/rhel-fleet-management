@@ -11,6 +11,6 @@ additional_build_steps:
   prepend: |
     RUN whoami
     RUN cat /etc/os-release
+    RUN dnf install -y gcc python3-dev
   append:
-    - RUN dnf install -y gcc
     - RUN echo This is a post-install command!
