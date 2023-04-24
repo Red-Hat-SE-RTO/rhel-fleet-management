@@ -1,1 +1,5 @@
 pyvmomi
+requests
+six
+pyOpenSSL
+ovirt-engine-sdk-python
