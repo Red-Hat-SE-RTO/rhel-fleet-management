@@ -11,6 +11,6 @@ additional_build_steps:
   prepend: |
     RUN whoami
     RUN cat /etc/os-release
-    RUN dnf install -y gcc python-devel libcurl-devel 
+    RUN dnf install -y gcc python-devel libcurl-devel python3-devel
   append:
     - RUN echo This is a post-install command!
