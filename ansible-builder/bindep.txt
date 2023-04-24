@@ -1,6 +1,5 @@
 # list your RPMs here
 # examples can be found on https://docs.opendev.org/opendev/bindep/latest/readme.html
-python-devel [platform:centos]
 gcc [platform:centos]
 python3-devel [platform:centos]
 libcurl-devel [platform:centos]
