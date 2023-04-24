@@ -26,7 +26,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   call-deploy-workflow:
-    uses: Red-Hat-SE-RTO/rhel-fleet-management/main/.github/workflows/base-build-deploy-ee.yml@main
+    uses: Red-Hat-SE-RTO/rhel-fleet-management/.github/workflows/base-build-deploy-ee.yml@main
     with:
       EE_FOLDER_NAME: 'ansible-builder'
       EE_IMAGE_NAME: 'rhel-fleet-management'
