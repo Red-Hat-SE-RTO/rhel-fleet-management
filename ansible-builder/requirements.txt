@@ -3,3 +3,5 @@ requests
 six
 pyOpenSSL
 ovirt-engine-sdk-python
+ovirt-imageio
+pycurl
