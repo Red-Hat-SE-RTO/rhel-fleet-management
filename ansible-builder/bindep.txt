@@ -1,7 +1,7 @@
 # list your RPMs here
 # examples can be found on https://docs.opendev.org/opendev/bindep/latest/readme.html
 gcc [platform:centos]
-python3-devel [platform:centos]
-libcurl-devel [platform:centos]
-openssl-devel [platform:centos]
-libxml2-devel [platform:centos]
+python3-devel [platform:rpm]
+libcurl-devel [platform:rpm]
+openssl-devel [platform:rpm]
+libxml2-devel [platform:rpm]
