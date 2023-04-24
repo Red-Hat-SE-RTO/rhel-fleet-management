@@ -1,0 +1,25 @@
+---
+collections:
+  - ansible.posix
+  - containers.podman
+  - community.general
+  - ovirt.ovirt
+  - community.vmware
+  - community.libvirt
+  - ansible.windows
+  - name: https://github.com/kenmoini/ansible-collection-hyperv.git
+    type: git
+    version: main
+roles:
+  - src: https://github.com/tosin2013/quarkuscoffeeshop-majestic-monolith-ansible.git
+    version: "2021"
+  - src: https://github.com/tosin2013/rhel-edge-management-role.git
+    version: main
+  - src: https://github.com/Red-Hat-SE-RTO/rhel-egde-on-vmware.git
+    version: main
+  - src: https://github.com/Red-Hat-SE-RTO/rhel-edge-on-rhev.git
+    version: main
+  - src: https://github.com/Red-Hat-SE-RTO/rhel-edge-on-hyperv.git
+    version: main
+  - src: https://github.com/Red-Hat-SE-RTO/rhel-edge-kvm-role.git
+    version: main
