@@ -101,7 +101,7 @@ jobs:
         working-directory: ${{ inputs.EE_FOLDER_NAME }}
         run: |
           sudo apt install build-essential
-          sudo apt-get install manpages-dev
+          sudo apt-get install python3-dev
           ansible-builder build \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ inputs.EE_IMAGE_TAG }} \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ github.sha }}

@@ -42,3 +42,6 @@ $ tree .
 
 14 directories, 15 files
 ```
+
+
+tag=0.0.1 && cd ~/rhel-fleet-management/ansible-builder && ansible-builder build -f execution-environment.yml -t rhel-fleet-management:${tag} -v 3
