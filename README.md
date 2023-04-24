@@ -45,3 +45,6 @@ $ tree .
 
 
 tag=0.0.1 && cd ~/rhel-fleet-management/ansible-builder && ansible-builder build -f execution-environment.yml -t rhel-fleet-management:${tag} -v 3
+
+
+ pip install pyVmomi vSphere-Automation-SDK ovirt-engine-sdk-python ovirt-imageio pycurl

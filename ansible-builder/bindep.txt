@@ -3,3 +3,5 @@
 gcc [platform:centos]
 python3-devel [platform:centos]
 libcurl-devel [platform:centos]
+openssl-devel [platform:centos]
+libxml2-devel [platform:centos]
