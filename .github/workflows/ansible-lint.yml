@@ -34,4 +34,4 @@ jobs:
         # replace `main` with any valid ref, or tags like `v6`
         uses: ansible/ansible-lint-action@main
         with:
-          path: "ansible-builder/"  # <-- only one value is allowed
+          path: "ansible-builder/requirements.yml"  # <-- only one value is allowed
