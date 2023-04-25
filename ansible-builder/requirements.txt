@@ -2,6 +2,6 @@ pyvmomi
 requests
 six
 pyOpenSSL
-ovirt-engine-sdk-python
-ovirt-imageio
-pycurl
+#ovirt-engine-sdk-python
+#ovirt-imageio
+#pycurl
