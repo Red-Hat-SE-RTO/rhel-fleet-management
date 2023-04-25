@@ -12,8 +12,8 @@ additional_build_steps:
     RUN whoami
     RUN cat /etc/os-release
     RUN dnf update -y && dnf upgrade -y
-    RUN dnf install -y libxml2-devel openssl-devel libcurl-devel python-devel gcc
-    RUN pip install --upgrade pip && pip install setuptools-rust && pip install cryptography
 
   append:
+    - RUN dnf install -y libxml2-devel openssl-devel libcurl-devel python-devel gcc
+    - RUN pip install --upgrade pip && pip install setuptools-rust && pip install cryptography
     - RUN echo This is a post-install command!
