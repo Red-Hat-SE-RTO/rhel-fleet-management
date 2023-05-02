@@ -99,8 +99,8 @@ jobs:
         id: build-image
         working-directory: ${{ inputs.EE_FOLDER_NAME }}
         run: |
-          sudo apt install build-essential
-          sudo apt-get install python3-dev libssl-dev libcurl4-openssl-dev libxml2-dev gcc
+          #sudo apt install build-essential
+          #sudo apt-get install python3-dev libssl-dev libcurl4-openssl-dev libxml2-dev gcc
           ansible-builder build \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ inputs.EE_IMAGE_TAG }} \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ github.sha }} -v 3
