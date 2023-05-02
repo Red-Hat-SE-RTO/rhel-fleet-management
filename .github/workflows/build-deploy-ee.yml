@@ -36,6 +36,6 @@ jobs:
       REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
       REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
       REGISTRY_PATH: ${{ secrets.REGISTRY_PATH }}
-      # REDHAT_USERNAME: ${{ secrets.REDHAT_USERNAME }}
-      # REDHAT_PASSWORD: ${{ secrets.REDHAT_PASSWORD }}
+      REDHAT_USERNAME: ${{ secrets.REDHAT_USERNAME }}
+      REDHAT_PASSWORD: ${{ secrets.REDHAT_PASSWORD }}
       # AH_TOKEN: ${{ secrets.AH_TOKEN }}
