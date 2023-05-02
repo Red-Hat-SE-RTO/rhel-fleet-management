@@ -79,14 +79,14 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-#      - name: Log in to registry.redhat.io
-#        id: registry-redhat
-#        if: ${{ secrets.REDHAT_PASSWORD != 0 }}
-#        uses: redhat-actions/podman-login@v1
-#        with:
-#          registry: registry.redhat.io
-#          username: ${{ secrets.REDHAT_USERNAME }}
-#          password: ${{ secrets.REDHAT_PASSWORD }}
+      - name: Log in to registry.redhat.io
+        id: registry-redhat
+        if: ${{ secrets.REDHAT_PASSWORD != 0 }}
+        uses: redhat-actions/podman-login@v1
+        with:
+          registry: registry.redhat.io
+          username: ${{ secrets.REDHAT_USERNAME }}
+          password: ${{ secrets.REDHAT_PASSWORD }}
 
 #      - name: Substitute token for automation hub
 #        id: ah-token
