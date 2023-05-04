@@ -26,6 +26,6 @@ additional_build_steps:
     RUN dnf update -y && dnf upgrade -y
     RUN dnf install http://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm -y
     RUN  dnf install python3-ovirt-engine-sdk4 libxml2-devel openssl-devel libcurl-devel gcc python3-pip  python38-devel -y
-    RUN pip3 install --upgrade pip3 && pip install setuptools-rust wheel && pip3 install cryptography pycurl ovirt_imageio
+    RUN pip3 install --upgrade pip && pip install setuptools-rust wheel && pip3 install cryptography pycurl ovirt_imageio
   append_builder:
     - RUN echo This is a post-install command!
