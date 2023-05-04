@@ -14,12 +14,12 @@ dependencies:
   system: bindep.txt
 
 additional_build_steps:
-  prepend: |
+  prepend_builder: |
     RUN whoami
     RUN cat /etc/os-release
     RUN dnf update -y && dnf upgrade -y
     RUN dnf install http://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm -y
     RUN  dnf install python3-ovirt-engine-sdk4 libxml2-devel openssl-devel libcurl-devel python3-devel gcc -y
     #RUN pip install --upgrade pip && pip install setuptools-rust && pip install cryptography
-  append:
+  append_builder:
     - RUN echo This is a post-install command!
