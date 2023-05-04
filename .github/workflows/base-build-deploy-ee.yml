@@ -101,6 +101,8 @@ jobs:
         run: |
           #sudo apt install build-essential
           #sudo apt-get install python3-dev libssl-dev libcurl4-openssl-dev libxml2-dev gcc
+          pip install ansible-builder==3.0.0rc1
+          ansible-builder --version
           ansible-builder build \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ inputs.EE_IMAGE_TAG }} \
           --tag=${{ inputs.EE_IMAGE_NAME }}:${{ github.sha }} -v 3
