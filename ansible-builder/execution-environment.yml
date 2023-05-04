@@ -16,11 +16,12 @@ dependencies:
   system: bindep.txt
   python_interpreter:
       package_system: "python3"
-      python_path: "/usr/bin/python3.11"
+      python_path: "/usr/bin/python3"
 
 additional_build_steps:
   prepend_builder: |
     RUN whoami
+    RUN python3 --version
     RUN cat /etc/os-release
     RUN dnf update -y && dnf upgrade -ypip
     RUN dnf install http://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm -y
