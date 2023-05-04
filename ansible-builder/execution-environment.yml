@@ -1,4 +1,4 @@
-version: 1
+version: 3
 
 #build_arg_defaults:
 #  EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-23/ee-minimal-rhel8:latest'
@@ -6,7 +6,9 @@ version: 1
 #  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: '-cv'
 
 
-ansible_config: 'ansible.cfg'
+additional_build_files:
+    - src: ansible.cfg
+      dest: configs
 
 dependencies:
   galaxy: requirements.yml
