@@ -65,7 +65,9 @@ ansiblesafe -f
 
 ## Development Steps
 ```
-git clone https://github.com/Red-Hat-SE-RTO/rhel-fleet-management.git
+$ git clone https://github.com/Red-Hat-SE-RTO/rhel-fleet-management.git
+$ make install-ansible-navigator
+$ make build-image
 ```
 
 

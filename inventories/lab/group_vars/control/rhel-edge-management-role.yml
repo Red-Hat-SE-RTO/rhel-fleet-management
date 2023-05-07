@@ -35,13 +35,16 @@ description: "sample description"
 build_template: image-build # for standard deployments image-build for microshift use image-microshift-build
 arch: "x86_64"
 # need to automate this
-custom_image_id: 3485 
+custom_image_id: 3485
 
 #########################################################
 ## current kickstart variables
 # https://github.com/RedHatInsights/edge-api/blob/main/templates/templateKickstart.ks
 enable_kickstart: true
-default_kickstart_url: "https://raw.githubusercontent.com/red-hat-se-rto/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
+default_kickstart_url: |
+  "https://raw.githubusercontent.com/red-hat-se-rto/
+  rhel-fleet-management/main/inventories/lab/applications/
+  quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
 clean_kickstart: true
 microshift_kickstart: false
 pull_secret: ''
@@ -62,5 +65,5 @@ os_variant: "rhel8.7"
 kickstart_file: fleet_kspost.txt
 
 #########################################################
-## Dont need to change 
+## Dont need to change
 compiled_uri_headers: {}

@@ -9,7 +9,7 @@ template_dir: /tmp/
 libvirt_defaults:
   edge_device:
     cpu: 4
-    memory: 4194304 
+    memory: 4194304
 
 virtual_machines:
   - name: "{{ libvirt_vm_name }}"
