@@ -3,7 +3,7 @@ ansible-navigator:
   ansible:
     inventory:
       entries:
-      - /home/admin/inventories/lab/applications
+      - /home/admin/rhel-fleet-management/inventories/lab
   execution-environment:
     container-engine: podman
     enabled: true

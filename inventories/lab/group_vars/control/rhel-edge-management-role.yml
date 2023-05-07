@@ -54,7 +54,7 @@ rhc_activation_key: "your_rhc_activation_key"
 #########################################################
 ## optional variables
 ## osinfo-query os
-os_variant: "rhel8.5"
+os_variant: "rhel8.7"
 
 #########################################################
 ## Completly override kickstart
