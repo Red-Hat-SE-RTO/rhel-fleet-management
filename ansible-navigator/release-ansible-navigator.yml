@@ -1,0 +1,21 @@
+---
+ansible-navigator:
+  ansible:
+    inventory:
+      entries:
+      - /home/admin/inventories/lab/applications
+  execution-environment:
+    container-engine: podman
+    enabled: true
+    environment-variables:
+      pass:
+      - USER
+    image: quay.io/takinosh/rhel-fleet-management:latest
+    pull:
+      policy: missing
+  logging:
+    append: true
+    file: /tmp/navigator/ansible-navigator.log
+    level: debug
+  playbook-artifact:
+    enable: false
