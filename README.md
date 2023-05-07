@@ -63,6 +63,11 @@ ansiblesafe -f
 # Tested on 
 * Fedora 37
 
+## Development Steps
+```
+git clone https://github.com/Red-Hat-SE-RTO/rhel-fleet-management.git
+```
+
 
 # Test inventory
 ```

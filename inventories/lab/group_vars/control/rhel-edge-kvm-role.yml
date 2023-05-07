@@ -2,9 +2,9 @@
 # defaults file for rhel-edge-kvm-role
 
 libvirt_image_dir: /var/lib/libvirt/images
-libvirt_iso_dir:  /var/lib/libvirt/images
+libvirt_iso_dir: /var/lib/libvirt/images
 libvirt_iso_name: rhel-edge-kvm.iso
-libvirt_vm_name:  rhel-edge-kvm
+libvirt_vm_name: rhel-edge-kvm
 template_dir: /tmp/
 libvirt_defaults:
   edge_device:
@@ -24,7 +24,7 @@ virtual_machines:
     image_name: "RHEL Edge image"
     disk_iso: "{{ libvirt_vm_name }}"
     connection_type: "bridge" # "bridge" or "network" bridge is default
-    bridgename: "qubibr0" 
+    bridgename: "qubibr0"
     bridge_mac: "{{ '52:54:00' | community.general.random_mac }}"
     vlanid: 0 # use 503 in network mode for emulated lab or 0 in hardware bridge mode
     subnet: "192.168.1.1/24"

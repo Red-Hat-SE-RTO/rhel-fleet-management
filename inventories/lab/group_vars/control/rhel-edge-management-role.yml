@@ -1,19 +1,19 @@
 ---
 #########################################################
 ## Direcoties
-### For Tower 
+### For Tower
 ## for workstation: iso_download_directory: "/opt/generated_iso"
 iso_download_directory: "/tmp/generated_iso"
 
-### For Tower 
+### For Tower
 ## for workstation: workspace: "/opt/lib/aws/projects/workspace"
 workspace: "/tmp/workspace"
 remove_workspace: false
 
 # defaults file for rhel-edge-mangement-role
-rh_offline_authentication_api_bearer_token:  rh_api_offline_token 
-rh_authentication_basic_username:  username 
-rh_authentication_basic_password:  password 
+rh_offline_authentication_api_bearer_token: rh_api_offline_token
+rh_authentication_basic_username: username
+rh_authentication_basic_password: password
 
 #########################################################
 ## Required Files
@@ -34,8 +34,8 @@ distribution: "rhel-86"
 description: "sample description"
 build_template: image-build # for standard deployments image-build for microshift use image-microshift-build
 arch: "x86_64"
-custom_image_id: 3485 # need to automate this 
-
+# need to automate this
+custom_image_id: 3485 
 
 #########################################################
 ## current kickstart variables
@@ -60,7 +60,6 @@ os_variant: "rhel8.7"
 ## Completly override kickstart
 ## kickstart_file: template.ks
 kickstart_file: fleet_kspost.txt
-
 
 #########################################################
 ## Dont need to change 
