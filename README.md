@@ -42,9 +42,42 @@ $ tree .
 
 14 directories, 15 files
 ```
+## Requirements setup ansible vault
+
+### Create a vault password file
+```
+curl -OL https://gist.githubusercontent.com/tosin2013/022841d90216df8617244ab6d6aceaf8/raw/94bbcb5f08e4d1f8507cef935a8ba27c092bb85a/ansible_vault_setup.sh
+chmod +x ansible_vault_setup.sh
+./ansible_vault_setup.sh
+```
+
+### Install and run ansible safe
+```
+curl -OL https://github.com/tosin2013/ansiblesafe/releases/download/v0.0.6/ansiblesafe-v0.0.6-linux-amd64.tar.gz
+tar -zxvf ansiblesafe-v0.0.6-linux-amd64.tar.gz
+chmod +x ansiblesafe-linux-amd64 
+sudo mv ansiblesafe-linux-amd64 /usr/local/bin/ansiblesafe
+ansiblesafe -f 
+
+```
+# Tested on 
+* Fedora 37
 
 
-tag=0.0.1 && cd ~/rhel-fleet-management/ansible-builder && ansible-builder build -f execution-environment.yml -t rhel-fleet-management:${tag} -v 3
+# Test inventory
+```
+ansible-navigator  inventory --list -m stdout --vault-password-file $HOME/.vault_password
+```
 
+## Deploy VM instances on KVM 
+```
+ansible-navigator run site.yml \
+        --vault-password-file "$HOME"/.vault_password -m stdout  -t create_kvm_vm --skip-tags "create_device_group,build_image,get_build_status,download_latest_iso"
+```
 
- pip install pyVmomi vSphere-Automation-SDK ovirt-engine-sdk-python ovirt-imageio pycurl
+## Troubleshoting
+```
+"msg": "libvirtError: unsupported configuration: Emulator '/usr/libexec/qemu-kvm' does not support machine type 'pc-q35-rhel8.6.0'"
+
+$ qemu-kvm -machine ?
+```
