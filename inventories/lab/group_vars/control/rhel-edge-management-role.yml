@@ -1,0 +1,69 @@
+---
+#########################################################
+## Direcoties
+### For Tower
+## for workstation: iso_download_directory: "/opt/generated_iso"
+iso_download_directory: "/tmp/generated_iso"
+
+### For Tower
+## for workstation: workspace: "/opt/lib/aws/projects/workspace"
+workspace: "/tmp/workspace"
+remove_workspace: false
+
+# defaults file for rhel-edge-mangement-role
+rh_offline_authentication_api_bearer_token: rh_api_offline_token
+rh_authentication_basic_username: username
+rh_authentication_basic_password: password
+
+#########################################################
+## Required Files
+ssh_pub_key: "ssh-rsa XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+#########################################################
+## required variables
+create_device_name_group: true
+device_group_name: "my-device-name-group"
+create_image: true
+
+#########################################################
+## image atrributes
+image_name: "test-image"
+vm_name: "test-vm"
+username: "admin"
+distribution: "rhel-86"
+description: "sample description"
+build_template: image-build # for standard deployments image-build for microshift use image-microshift-build
+arch: "x86_64"
+# need to automate this
+custom_image_id: 3485
+
+#########################################################
+## current kickstart variables
+# https://github.com/RedHatInsights/edge-api/blob/main/templates/templateKickstart.ks
+enable_kickstart: true
+default_kickstart_url: |
+  "https://raw.githubusercontent.com/red-hat-se-rto/
+  rhel-fleet-management/main/inventories/lab/applications/
+  quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
+clean_kickstart: true
+microshift_kickstart: false
+pull_secret: ''
+
+#########################################################
+## automated management variables
+rhc_org_id: "your_rhc_org_id"
+rhc_activation_key: "your_rhc_activation_key"
+
+#########################################################
+## optional variables
+## osinfo-query os
+os_variant: "rhel8.7"
+
+#########################################################
+## Completly override kickstart
+## kickstart_file: template.ks
+kickstart_file: fleet_kspost.txt
+
+#########################################################
+## Dont need to change
+compiled_uri_headers: {}
