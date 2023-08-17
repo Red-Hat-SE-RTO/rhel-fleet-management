@@ -62,13 +62,13 @@ compiled_uri_headers: {}
 **RHEL Username**
 * Required: true  
 * Question:`RH Username:` . 
-* Answer variable name: `rh_authentication_basic_username` . 
+* Answer variable name: `rhsm_username` . 
 ![20221113120730](https://i.imgur.com/Aze4OCN.png)
 
 **RHEL Password**
 * Required: true   
 * Question: `RH Password:` . 
-* Answer variable name: `rh_authentication_basic_password` . 
+* Answer variable name: `rhsm_password` . 
 ![20221113120935](https://i.imgur.com/mjgWPBp.png)
 
 **API Token:**
