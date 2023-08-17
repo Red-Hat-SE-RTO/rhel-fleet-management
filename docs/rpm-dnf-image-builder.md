@@ -15,6 +15,7 @@ https://console.redhat.com/insights/image-builder
 ### For Tower 
 ## for workstation: iso_download_directory: "/opt/generated_iso"
 iso_download_directory: "/tmp/generated_iso"
+image_type: image-installer   # guest-image=qcow2 image-installer=iso
 
 ### For Tower 
 ## for workstation: workspace: "/opt/lib/aws/projects/workspace"
@@ -36,8 +37,10 @@ image_name: "test-image" # Example: "test-image-11-13-2022-b1"
 username: "admin"
 distribution: "rhel-92"
 description: "sample description"
-packages: "curl net-tools podman tar bind-utils git"
-build_template: image-build # for standard deployments image-build for microshift use image-mircoshift-build
+packages:  ["curl", "net-tools", "podman", "tar", "bind-utils", "git"]
+# for osbuild tree  deployments image-build for microshift use image-microshift-build
+# for rpm image builder use image-builder
+build_template: image-builder
 arch: "x86_64"
 enable_kickstart: false 
 kickstart_path: "https://raw.githubusercontent.com/Red-Hat-SE-RTO/rhel-fleet-management/main/inventories/lab/applications/quarkuscoffeeshop-majestic-monolith-fleet-manger/fleet.kspost"
